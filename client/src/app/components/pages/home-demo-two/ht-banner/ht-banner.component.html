@@ -1,0 +1,40 @@
+<div class="pt-[105px] md:pt-[125px] lg:pt-[160px] xl:pt-[172px] pb-60 md:pb-80 lg:pb-100 xl:pb-130 relative z-1 bg-[#eff3f4] 2xl:bg-primary before:bg-[#eff3f4] before:left-0 before:top-0 before:bottom-0 before:-z-1 before:absolute before:w-[50%] 2xl:before:w-[45%] 3xl:before:w-[54%] before:hidden 2xl:before:block banner-area after:absolute after:right-[25%] after:top-[130px] after:w-[775px] after:h-[775px] after:rounded-full after:-z-2 after:hidden 2xl:after:block">
+    <div class="px-10 sm:px-0 2xl:px-25 3xl:px-[80px] mx-auto sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[100%] 3xl:max-w-[1920px] relative">
+        <div class="2xl:absolute 2xl:left-25 3xl:left-[80px] 2xl:bottom-[4%] mt-20 md:mt-25 2xl:mt-0">
+            <ul class="mb-[12px] md:mb-15">
+                @for (user of users; track $index) {
+                <li>
+                    {{user.id}} - {{user.userName}}
+                </li>
+            }
+            </ul>
+            <div class="self-center text-black font-bold text-[25px] md:text-[38px] lg:text-[40px] leading-none mb-10">
+                The Women's Help 
+            </div>
+            <div class="self-center text-black font-bold text-[25px] md:text-[38px] lg:text-[40px] leading-none mb-10">
+                Network
+            </div>
+        </div>
+        <div class="lg:grid lg:grid-cols-3 lg:gap-25">
+            <div class="self-center col-span-2">
+                <div class="2xl:ml-auto 2xl:max-w-[650px] 3xl:max-w-[813px] mt-20 md:mt-25 2xl:-mt-55 relative 2xl:-z-1 2xl:left-55 lg:pr-70 xl:pr-15 2xl:pr-0">
+                    <img src="assets/images/banners/homepageone.png" class="rounded-lg" alt="banner-image">
+                </div>
+            </div>
+            <div class="self-center 2xl:pl-70 3xl:pl-120 mt-25 2xl:-mt-[50px] 3xl:-mt-[240px] lg:-ml-70 xl:-ml-15 2xl:ml-0">
+                <div class="lg:text-right">
+                    <img src="assets/images/cards/story.jpeg" class="inline lg:max-w-[250px] 2xl:max-w-[100%] rounded-xl bg-blend-soft-light" alt="card-image">
+                </div>
+                <h2 class="text-black 2xl:text-white font-serif text-[22px] md:text-[30px] lg:text-[38px] xl:text-[45px] md:-tracking-[.50px] lg:-tracking-[1px] xl:-tracking-[1.5px] leading-[1.2] mt-25 xl:mt-50 2xl:mt-100 3xl:mt-[122px] mb-5 md:mb-25 lg:mb-30 xl:mb-40">
+                    Supports When You Need It Most
+                </h2>
+                <a routerLink="/register" class="mt-15 md:mt-0 text-black 2xl:text-white inline-block font-semibold text-[14px] md:text-[15px] rounded-full py-[10px] md:py-[11px] lg:py-[12px] px-20 md:px-25 border border-[#204d64] transition-all hover:bg-white hover:border-white hover:text-black">
+                    Join Now
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="absolute left-[40%] 2xl:left-[7%] 3xl:left-[9.5%] top-[30%] xl:top-[28%] 2xl:top-[41%] 3xl:top-[42.2%] -z-1 pointer-events-none">
+        <img src="assets/images/shapes/shape5.png" alt="shape5">
+    </div> -->
+</div>

@@ -1,0 +1,14 @@
+<div
+    [ngClass]="{'hidden': router.url === '/login' || router.url === '/register'}"
+>
+    <app-navbar></app-navbar>
+</div>
+
+<router-outlet></router-outlet>
+
+<div
+    [ngClass]="{'hidden': router.url === '/login' || router.url === '/register'}"
+>
+    <app-footer></app-footer>
+    <ngx-scrolltop></ngx-scrolltop>
+</div>

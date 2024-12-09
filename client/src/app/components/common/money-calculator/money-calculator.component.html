@@ -1,0 +1,472 @@
+<div
+    class="money-calculator-area py-60 md:py-80 lg:py-100 xl:py-130 bg-primary relative z-2 before:absolute before:top-0 before:left-0 before:w-[800px] before:h-[800px] before:rounded-full before:-z-2 before:hidden lg:before:block"
+>
+    <div class="px-10 sm:px-0 container mx-auto">
+        <div class="lg:grid lg:grid-cols-3 lg:gap-30">
+            <div class="money-calculator-form bg-warning rounded-2xl p-20 md:p-30 lg:p-30 xl:p-40 2xl:p-50 relative z-1 lg:-mr-120 xl:-mr-70 self-center">
+                <label class="block text-[14px] text-secondary mb-10">
+                    You send exactly
+                </label>
+                <div class="relative">
+                    <input type="text" class="block w-[100%] h-60 rounded-[10px] pl-[18px] text-[16px] md:text-[20px] text-black leading-[60px] outline-0 pr-[125px] bg-[#fee8ac] border border-white" value="25,040">
+                    <button type="button" class="text-[18px] font-semibold absolute top-0 right-0 bottom-0 inline-block pl-[50px] pr-[42px] before:left-0 before:top-0 before:bottom-0 before:w-[1px] before:bg-white before:absolute" (click)="toggleClass()">
+                        <img src="assets/images/flags/gbp.svg" class="w-[22px] h-[22px] rounded-full left-[17px] absolute top-1/2 -translate-y-2/4" alt="gbp">
+                        GBP
+                        <i class="ri-arrow-down-s-line absolute right-[15px] font-medium top-1/2 -translate-y-2/4 text-[25px] mt-[2px]"></i>
+                    </button>
+                    <div class="money-currencies absolute left-0 right-0 top-[100%] bg-white p-15 z-1 shadow-one rounded-2xl overflow-y-scroll h-[500px] transition-all" [class.active]="classApplied">
+                        <ul>
+                            <li>
+                                <div class="relative">
+                                    <i class="ri-search-line absolute left-15 top-1/2 -translate-y-2/4 text-[18px] text-secondary"></i>
+                                    <input type="text" placeholder="Type a currency / country" class="block w-[100%] h-50 rounded-[10px] pl-40 pr-20 text-[15px] text-black leading-[50px] outline-0 placeholder:text-[#666666] pb-[2px]">
+                                </div>
+                            </li>
+                            <li>
+                                <span class="block text-[14px] text-secondary mt-15 ml-15 mr-15 mb-[8px]">
+                                    Popular currencies
+                                </span>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/eur.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="euro">
+                                    <span class="text-black font-medium text-[16px]">
+                                        EUR
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Euro
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] bg-gray">
+                                    <img src="assets/images/flags/gbp.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="gbp">
+                                    <span class="text-black font-medium text-[16px]">
+                                        GBP
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        British pound
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/inr.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="inr">
+                                    <span class="text-black font-medium text-[16px]">
+                                        INR
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Indian rupee
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/usd.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="usd">
+                                    <span class="text-black font-medium text-[16px]">
+                                        USD
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        United States dollar
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <span class="block text-[14px] text-secondary mt-[8px] ml-15 mr-15 mb-[8px]">
+                                    All currencies
+                                </span>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/aed.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="aed">
+                                    <span class="text-black font-medium text-[16px]">
+                                        AED
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        United Arab Emirates dirham
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/aud.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="aud">
+                                    <span class="text-black font-medium text-[16px]">
+                                        AUD
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Australian dollar
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/bgn.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="bgn">
+                                    <span class="text-black font-medium text-[16px]">
+                                        BGN
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Bulgarian lev
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/brl.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="brl">
+                                    <span class="text-black font-medium text-[16px]">
+                                        BRL
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Brazilian real
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/cad.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="cad">
+                                    <span class="text-black font-medium text-[16px]">
+                                        CAD
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Canadian dollar
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/chf.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="chf">
+                                    <span class="text-black font-medium text-[16px]">
+                                        CHF
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Swiss franc
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/cny.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="cny">
+                                    <span class="text-black font-medium text-[16px]">
+                                        CNY
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Chinese yuan
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/czk.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="czk">
+                                    <span class="text-black font-medium text-[16px]">
+                                        CZK
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Czech koruna
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/dkk.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="dkk">
+                                    <span class="text-black font-medium text-[16px]">
+                                        DKK
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Danish krone
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/hkd.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="hkd">
+                                    <span class="text-black font-medium text-[16px]">
+                                        HKD
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Hong Kong dollar
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="mt-20 md:mt-25 lg:mt-30 relative before:left-[10px] before:mt-[2px] before:mb-[2px] before:top-0 before:bottom-0 before:w-[1px] before:bg-white before:absolute">
+                    <li class="md:flex justify-between mb-15">
+                        <div class="relative pl-[27px] md:pl-[32px] self-center">
+                            <span class="inline-block bg-gray w-[20px] h-[20px] md:w-[22px] w-[20px] h-[20px] md:h-[22px] rounded-full text-center leading-[19px] md:leading-[22px] font-bold absolute left-0 top-1/2 -translate-y-2/4">
+                                <i class="ri-subtract-line relative left-[1px]"></i>
+                            </span>
+                            <span class="text-[14px] md:text-[15px] font-medium">
+                                22.07 GBP
+                            </span>
+                        </div>
+                        <div class="self-center ml-[26px] mt-[1px] md:ml-0 md:mt-0">
+                            <button type="button" class="text-[14px] md:text-[15px] font-medium relative pr-[20px] md:pr-[24px] text-[#0e0f0c]">
+                                Low Cost Transfer Fee
+                                <i class="ri-arrow-down-s-line absolute right-0 top-1/2 -translate-y-2/4 text-[18px] mt-[1px]"></i>
+                            </button>
+                        </div>
+                    </li>
+                    <li class="md:flex justify-between mb-15">
+                        <div class="relative pl-[27px] md:pl-[32px] self-center">
+                            <span class="inline-block bg-gray w-[20px] h-[20px] md:w-[22px] w-[20px] h-[20px] md:h-[22px] rounded-full text-center leading-[19px] md:leading-[22px] font-bold absolute left-0 top-1/2 -translate-y-2/4">
+                                <i class="ri-equal-line relative left-[1px]"></i>
+                            </span>
+                            <span class="text-[14px] md:text-[15px] font-medium">
+                                63.5147 GBP
+                            </span>
+                        </div>
+                        <div class="text-[14px] md:text-[15px] font-medium text-secondary self-center ml-[26px] mt-[1px] md:ml-0 md:mt-0">
+                            Total Amount We’ll Convert
+                        </div>
+                    </li>
+                    <li class="md:flex justify-between mb-15 md:mb-20">
+                        <div class="relative pl-[27px] md:pl-[32px] self-center">
+                            <span class="inline-block bg-gray w-[20px] h-[20px] md:w-[22px] w-[20px] h-[20px] md:h-[22px] rounded-full text-center leading-[19px] md:leading-[22px] font-bold absolute left-0 top-1/2 -translate-y-2/4">
+                                <i class="ri-close-line relative left-[.5px]"></i>
+                            </span>
+                            <span class="text-[14px] md:text-[15px] font-medium">
+                                1.05345
+                            </span>
+                        </div>
+                        <div class="text-[14px] md:text-[15px] font-medium text-[#0e0f0c] self-center ml-[26px] mt-[1px] md:ml-0 md:mt-0">
+                            Guaranted rate (5h)
+                        </div>
+                    </li>
+                </ul>
+                <label class="block text-[14px] text-secondary mb-10">
+                    Recipient gets
+                </label>
+                <div class="relative mb-15 md:mb-20">
+                    <input type="text" class="block w-[100%] h-60 rounded-[10px] pl-[18px] text-[16px] md:text-[20px] text-black leading-[60px] outline-0 pr-[125px] bg-[#fee8ac] border border-white" value="14,14633.84">
+                    <button type="button" class="text-[18px] font-semibold absolute top-0 right-0 bottom-0 inline-block pl-[50px] pr-[42px] before:left-0 before:top-0 before:bottom-0 before:w-[1px] before:bg-white before:absolute" (click)="toggleClass2()">
+                        <img src="assets/images/flags/eur.svg" class="w-[22px] h-[22px] rounded-full left-[17px] absolute top-1/2 -translate-y-2/4" alt="gbp">
+                        EUR
+                        <i class="ri-arrow-down-s-line absolute right-[15px] font-medium top-1/2 -translate-y-2/4 text-[25px] mt-[2px]"></i>
+                    </button>
+                    <div class="money-currencies absolute left-0 right-0 top-[100%] bg-white p-15 z-1 shadow-one rounded-2xl overflow-y-scroll h-[500px] transition-all" [class.active]="classApplied2">
+                        <ul>
+                            <li>
+                                <div class="relative">
+                                    <i class="ri-search-line absolute left-15 top-1/2 -translate-y-2/4 text-[18px] text-secondary"></i>
+                                    <input type="text" placeholder="Type a currency / country" class="block w-[100%] h-50 rounded-[10px] pl-40 pr-20 text-[15px] text-black leading-[50px] outline-0 placeholder:text-[#666666] pb-[2px]">
+                                </div>
+                            </li>
+                            <li>
+                                <span class="block text-[14px] text-secondary mt-15 ml-15 mr-15 mb-[8px]">
+                                    Popular currencies
+                                </span>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/eur.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="euro">
+                                    <span class="text-black font-medium text-[16px]">
+                                        EUR
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Euro
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] bg-gray">
+                                    <img src="assets/images/flags/gbp.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="gbp">
+                                    <span class="text-black font-medium text-[16px]">
+                                        GBP
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        British pound
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/inr.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="inr">
+                                    <span class="text-black font-medium text-[16px]">
+                                        INR
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Indian rupee
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/usd.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="usd">
+                                    <span class="text-black font-medium text-[16px]">
+                                        USD
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        United States dollar
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <span class="block text-[14px] text-secondary mt-[8px] ml-15 mr-15 mb-[8px]">
+                                    All currencies
+                                </span>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/aed.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="aed">
+                                    <span class="text-black font-medium text-[16px]">
+                                        AED
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        United Arab Emirates dirham
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/aud.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="aud">
+                                    <span class="text-black font-medium text-[16px]">
+                                        AUD
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Australian dollar
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/bgn.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="bgn">
+                                    <span class="text-black font-medium text-[16px]">
+                                        BGN
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Bulgarian lev
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/brl.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="brl">
+                                    <span class="text-black font-medium text-[16px]">
+                                        BRL
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Brazilian real
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/cad.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="cad">
+                                    <span class="text-black font-medium text-[16px]">
+                                        CAD
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Canadian dollar
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/chf.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="chf">
+                                    <span class="text-black font-medium text-[16px]">
+                                        CHF
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Swiss franc
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/cny.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="cny">
+                                    <span class="text-black font-medium text-[16px]">
+                                        CNY
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Chinese yuan
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/czk.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="czk">
+                                    <span class="text-black font-medium text-[16px]">
+                                        CZK
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Czech koruna
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/dkk.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="dkk">
+                                    <span class="text-black font-medium text-[16px]">
+                                        DKK
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Danish krone
+                                    </span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="relative block w-[100%] text-left rounded-lg pl-[46px] pt-[12px] pb-[12px] transition-all hover:bg-gray">
+                                    <img src="assets/images/flags/hkd.svg" class="w-[22px] h-[22px] rounded-full left-15 absolute top-1/2 -translate-y-2/4" alt="hkd">
+                                    <span class="text-black font-medium text-[16px]">
+                                        HKD
+                                    </span>
+                                    <span class="text-[14px] text-secondary ml-5">
+                                        Hong Kong dollar
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="block text-[14px] text-secondary">
+                    Delivery Time: <span class="text-black font-medium">By August 23th</span>
+                </span>
+                <div class="mt-15 md:mt-20 lg:mt-30">
+                    <a routerLink="/pricing" class="inline-block text-[13px] md:text-[14px] lg:text-[15px] text-black border-black border font-semibold py-[12px] px-25 md:px-30 rounded-full transition-all hover:bg-black hover:text-white">
+                        Compare Price
+                    </a>
+                    <a routerLink="/register" class="ml-15 md:ml-20 inline-block text-[13px] md:text-[14px] lg:text-[15px] text-black bg-white border-white border font-semibold py-[12px] px-30 md:px-40 rounded-full transition-all hover:bg-black hover:border-black hover:text-white">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+            <div class="col-span-2 text-white lg:pl-[145px] self-center mt-25 md:mt-35 lg:mt-0">
+                <h2 class="font-bold text-[24px] md:text-[35px] lg:text-[48px] xl:text-[50px] text-white leading-tight lg:max-w-[660px] mb-[12px] md:mb-15 md:-tracking-[.5px] lg:-tracking-[1px] xl:-tracking-[1.6px]">
+                    Take the Stress Out of Managing Property and Money
+                </h2>
+                <p class="lg:max-w-[600px] text-[15px] md:text-[16px] lg:text-[18px] xl:text-[20px] text-[#dfdfdf] leading-[1.7]">
+                    It sounds like you're referring to a service or solution that aims to simplify the management of property and financial matters. Whether you're a property owner
+                </p>
+                <div class="box flex mt-20 md:mt-30">
+                    <div class="self-center relative mr-15 md:mr-25 rounded-[5px] w-[85px] h-[78px] text-center bg-[#1b4a5e]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto absolute left-0 right-0 top-1/2 -translate-y-2/4 -mt-[1px]" width="39" height="39" viewBox="0 0 39 39" fill="none">
+                            <path d="M1 26.6665C1 21.4811 1 18.8884 2.61091 17.2775C4.22183 15.6665 6.81454 15.6665 12 15.6665H26.6667C31.8521 15.6665 34.4448 15.6665 36.0557 17.2775C37.6667 18.8884 37.6667 21.4811 37.6667 26.6665C37.6667 31.8519 37.6667 34.4446 36.0557 36.0556C34.4448 37.6665 31.8521 37.6665 26.6667 37.6665H12C6.81454 37.6665 4.22183 37.6665 2.61091 36.0556C1 34.4446 1 31.8519 1 26.6665Z" stroke="#FFD15C" stroke-width="2"/>
+                            <path d="M19.3333 30.3333C21.3584 30.3333 23 28.6917 23 26.6667C23 24.6416 21.3584 23 19.3333 23C17.3083 23 15.6667 24.6416 15.6667 26.6667C15.6667 28.6917 17.3083 30.3333 19.3333 30.3333Z" stroke="#FFD15C" stroke-width="2"/>
+                            <path d="M8.33333 15.6667V12C8.33333 5.92486 13.2582 1 19.3333 1C25.4084 1 30.3333 5.92486 30.3333 12V15.6667" stroke="#FFD15C" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="self-center text-white text-[16px] md:text-[18px] lg:text-[20px] font-bold md:max-w-[305px]">
+                        Pay Online Securely with Instant Notifications
+                    </h3>
+                </div>
+                <div class="box flex mt-20 md:mt-30">
+                    <div class="self-center relative mr-15 md:mr-25 rounded-[5px] w-[85px] h-[78px] text-center bg-[#1b4a5e]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto absolute left-0 right-0 top-1/2 -translate-y-2/4 -mt-[1px]" width="46" height="46" viewBox="0 0 46 46" fill="none">
+                            <path d="M35.9375 9.63125C31.05 9.63125 26.45 7.61875 23 4.3125C19.55 7.61875 14.95 9.63125 10.0625 9.63125C8.05 9.63125 6.18125 9.2 4.3125 8.625C4.3125 28.75 12.2188 36.8 23 41.6875C33.7812 36.8 41.6875 28.75 41.6875 8.625C39.8188 9.2 37.95 9.63125 35.9375 9.63125Z" stroke="#FFD15C" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17.25 23L21.5625 27.3125L30.1875 18.6875" stroke="#FFD15C" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="self-center text-white text-[16px] md:text-[18px] lg:text-[20px] font-bold md:max-w-[305px]">
+                        Convert Your Money in Seconds
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute left-[36%] bottom-[10%] pointer-events-none -z-1 opacity-80 hidden lg:block">
+        <img src="assets/images/shapes/shape1.png" alt="shape1">
+    </div>
+    <div class="absolute right-0 bottom-0 pointer-events-none -z-1 hidden lg:block">
+        <img src="assets/images/shapes/shape2.png" alt="shape2">
+    </div>
+</div>

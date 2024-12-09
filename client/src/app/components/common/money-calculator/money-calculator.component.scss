@@ -1,0 +1,22 @@
+.money-calculator-area {
+    &::before {
+        background: rgba(61, 255, 162, 0.15);
+        filter: blur(100px);
+    }
+}
+.money-calculator-form {
+    .money-currencies {
+        opacity: 0;
+        visibility: hidden;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+.hidden {
+    &.block {
+        display: block !important;
+    }
+}

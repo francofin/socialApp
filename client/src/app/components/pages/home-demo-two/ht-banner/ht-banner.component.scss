@@ -1,0 +1,6 @@
+.banner-area {
+    &::after {
+        background: rgba(61, 255, 162, 0.22);
+        filter: blur(100px);
+    }
+}

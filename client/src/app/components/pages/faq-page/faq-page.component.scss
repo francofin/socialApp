@@ -1,0 +1,22 @@
+.accordion {
+    .accordion-item {
+        .accordion-header {
+            &.open {
+                .icon {
+                    i {
+                        &::before {
+                            content: "\f1af";
+                        }
+                    }
+                }
+            }
+        }
+        .accordion-content {
+            display: none;
+
+            &.open {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+<div class="3xl:max-w-[1920px] pt-60 md:pt-80 lg:pt-0">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="lg:h-[100vh] px-15 lg:px-25 xl:px-50 2xl:px-80 3xl:px-150">
+            <div class="lg:table lg:w-full lg:h-full sm:max-w-[540px] md:max-w-[600px] lg:max-w-[100%] sm:mx-auto">
+                <div class="lg:table-cell lg:align-middle">
+                    <a routerLink="/" class="inline-block mb-10 md:mb-15 lg:mb-20 text-[14px] md:text-[15px] font-medium relative pl-[16px]">
+                        <i class="ri-arrow-left-s-line absolute top-1/2 -translate-y-2/4 text-[22px] -left-[8px]"></i>
+                        Back to Home
+                    </a>
+                    <h3 class="text-black font-bold text-[20px] md:text-[22px] lg:text-[25px] md:max-w-[300px] mb-20 md:mb-30 leading-[1.3]">
+                        Create Your Account
+                    </h3>
+                    <form>
+                        <div class="mb-15 md:mb-20">
+                            <input type="text" class="rounded-lg bg-gray h-50 md:h-60 lg:h-[58px] block w-full outline-0 pl-15 md:pl-25 pb-[2px] text-black placeholder:text-secondary text-[14px] md:text-[15px] lg:text-[16px]" placeholder="Username">
+                        </div>
+                        <div class="mb-15 md:mb-20">
+                            <input type="email" class="rounded-lg bg-gray h-50 md:h-60 lg:h-[58px] block w-full outline-0 pl-15 md:pl-25 pb-[2px] text-black placeholder:text-secondary text-[14px] md:text-[15px] lg:text-[16px]" placeholder="Email address">
+                        </div>
+                        <div class="mb-15 md:mb-20">
+                            <input type="password" class="rounded-lg bg-gray h-50 md:h-60 lg:h-[58px] block w-full outline-0 pl-15 md:pl-25 pb-[2px] text-black placeholder:text-secondary text-[14px] md:text-[15px] lg:text-[16px]" placeholder="Password">
+                        </div>
+                        <div class="mb-15 md:mb-20">
+                            <input type="password" class="rounded-lg bg-gray h-50 md:h-60 lg:h-[58px] block w-full outline-0 pl-15 md:pl-25 pb-[2px] text-black placeholder:text-secondary text-[14px] md:text-[15px] lg:text-[16px]" placeholder="Confirm password">
+                        </div>
+                        <button class="text-warning text-[14px] md:text-[16px] lg:text-[18px] font-semibold bg-primary block w-full rounded-full px-30 py-[14px] md:py-15 transition-all hover:bg-warning hover:text-black" type="submit">
+                            Create Account
+                        </button>
+                    </form>
+                    <div class="flex justify-between mt-15 md:mt-20">
+                        <!-- <a routerLink="/" class="inline-block text-[14px] md:text-[15px] lg:text-[16px] text-[#c74545] transition-all hover:underline">
+                            Forgot Password?
+                        </a> -->
+                        <span class="inline-block text-[14px] md:text-[15px] lg:text-[16px] text-black">
+                            Already have account?
+                            <a routerLink="/login" class="text-[#c74545] transition-all hover:underline">
+                                Sign in
+                            </a>
+                        </span>
+                    </div>
+                    <span class="block text-center mt-20 md:mt-25 text-[#666666] text-[14px] md:text-[15px] lg:text-[16px] relative z-1 before:left-0 before:right-0 before:top-1/2 before:-translate-y-2/4 before:absolute before:bg-[#eeeeee] before:h-[1px] before:-z-1">
+                        <span class="bg-white px-20 inline-block font-medium">
+                            Or Sign Up With
+                        </span>
+                    </span>
+                    <div class="md:flex lg:block xl:flex mt-15 md:mt-20 md:gap-20 space-y-[12px] md:space-y-0 lg:space-y-[14px] xl:space-y-0">
+                        <button type="button" class="block w-full text-[14px] md:text-[15px] lg:text-[16px] text-black font-medium px-15 py-[12px] border border-[#eeeeee] rounded-full transition-all hover:border-primary">
+                            <img src="assets/images/icons/google.svg" class="inline mr-10" alt="google">
+                            Sign up with Google
+                        </button>
+                        <button type="button" class="block w-full text-[14px] md:text-[15px] lg:text-[16px] text-black font-medium px-15 py-[12px] border border-[#eeeeee] rounded-full transition-all hover:border-primary">
+                            <img src="assets/images/icons/facebook.svg" class="inline mr-10" alt="facebook">
+                            Sign up with Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-primary mt-25 lg:mt-0 bg-register bg-center bg-cover bg-no-repeat h-full">
+            <img src="assets/images/register.jpg" class="inline lg:hidden" alt="register-image">
+        </div>
+    </div>
+</div>

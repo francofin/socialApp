@@ -1,0 +1,41 @@
+<!-- Default Section -->
+<div
+    class="py-60 md:py-80 lg:py-100 xl:py-130 bg-gray relative z-1"
+    [ngClass]="{'hidden': router.url === '/index-2' || router.url === '/testimonials'}"
+>
+    <div class="px-10 sm:px-0 container mx-auto">
+        <h1 class="text-center text-[30px] md:text-[40px] lg:text-[55px] xl:text-[67px] font-bold -tracking-[1px] md:-tracking-[1.68px] lg:-tracking-[2px] xl:-tracking-[2.68px] 2xl:mx-auto 2xl:max-w-[1445px] leading-[45px] md:leading-[62px] lg:leading-[80px] xl:leading-[86px] text-black">
+            Sending International
+            <a routerLink="/services" class="bg-warning relative text-[30px] md:text-[40px] ml-5 mr-5 md:ml-10 md:mr-10 lg:ml-15 lg:mr-15 top-10 md:top-[13px] lg:top-10 xl:top-5 rounded-full w-[90px] h-[40px] md:w-[142px] md:h-[59px] inline-block transition-all hover:bg-primary hover:text-white">
+                <i class="ri-arrow-right-up-line absolute left-0 right-0 top-1/2 -translate-y-2/4"></i>
+            </a>
+            Business Payments or Sending Money to Family Overseas? Arad is
+            <img src="assets/images/cards/card1.png" class="inline ml-5 mr-5 md:ml-10 md:mr-10 lg:ml-15 lg:mr-15" alt="card">
+            your Fast and Simple Solution
+        </h1>
+    </div>
+    <div class="absolute pointer-events-none -z-1 left-[8%] bottom-[5%] hidden 2xl:block">
+        <img src="assets/images/cards/card2.png" alt="card2">
+    </div>
+</div>
+
+<!-- Section For Only Home Demo - 2 -->
+<div
+    class="py-60 md:py-80 lg:py-100 xl:py-130 bg-[#feecbd] relative z-1 rounded-lg hidden"
+    [ngClass]="{'block': router.url === '/index-2' || router.url === '/testimonials'}"
+>
+    <div class="px-10 sm:px-0 container mx-auto">
+        <h1 class="text-center text-[30px] md:text-[40px] lg:text-[55px] xl:text-[67px] font-bold -tracking-[1px] md:-tracking-[1.68px] lg:-tracking-[2px] xl:-tracking-[2.68px] 2xl:mx-auto 2xl:max-w-[1445px] leading-[45px] md:leading-[62px] lg:leading-[80px] xl:leading-[86px] text-black">
+            Sending International
+            <a routerLink="/services" class="bg-warning relative text-[30px] md:text-[40px] ml-5 mr-5 md:ml-10 md:mr-10 lg:ml-15 lg:mr-15 top-10 md:top-[13px] lg:top-10 xl:top-5 rounded-full w-[90px] h-[40px] md:w-[142px] md:h-[59px] inline-block transition-all hover:bg-primary hover:text-white">
+                <i class="ri-arrow-right-up-line absolute left-0 right-0 top-1/2 -translate-y-2/4"></i>
+            </a>
+            Business Payments or Sending Money to Family Overseas? Arad is
+            <img src="assets/images/cards/card1.png" class="inline ml-5 mr-5 md:ml-10 md:mr-10 lg:ml-15 lg:mr-15" alt="card">
+            your Fast and Simple Solution
+        </h1>
+    </div>
+    <div class="absolute pointer-events-none -z-1 left-[9%] bottom-[17%] hidden 2xl:block max-w-[110px]">
+        <img src="assets/images/cards/card2.png" alt="card2">
+    </div>
+</div>

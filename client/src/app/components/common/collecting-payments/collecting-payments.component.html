@@ -1,0 +1,25 @@
+<div
+    class="py-60 md:py-80 lg:py-100 xl:py-130"
+    [ngClass]="{'pt-0': router.url === '/saving-goals'}"
+>
+    <div class="px-10 sm:px-0 container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-25 lg:gap-40">
+            <div class="bg-gray lg:-mr-[125px] rounded-lg px-20 md:px-30 lg:px-40 xl:px-[75px] py-25 md:py-40 lg:py-50 xl:py-60 relative">
+                <h2 class="font-bold text-[24px] md:text-[28px] lg:text-[34px] xl:text-[40px] xl:max-w-[450px] md:-tracking-[.5px] lg:-tracking-[1px] xl:-tracking-[1.6px] leading-snug text-black mb-15 md:mb-20 xl:mb-25">
+                    Start Collecting Payments Now
+                </h2>
+                <p class="text-[14px] md:text-[16px] lg:text-[18px] xl:text-[18px] 2xl:text-[20px] text-secondary leading-[1.7] xl:max-w-[610px] md:-tracking-[0.5px]">
+                    Benefit from our fully customizable payment form created to convert and retain your customers. You are in complete control, from the colors to the layout to the payments journey.
+                </p>
+                <img src="assets/images/icons/star.png" class="mt-15 md:mt-60 lg:mt-30 xl:mt-60" alt="star">
+                <a routerLink="/contact" class="inline-block text-[13px] md:text-[14px] lg:text-[15px] text-black bg-warning border-warning border font-semibold py-[12px] px-30 rounded-full transition-all hover:bg-primary hover:text-white hover:border-primary mt-15 md:mt-70 lg:mt-30 xl:mt-70">
+                    Get in Touch
+                </a>
+                <img src="assets/images/collecting-payments.png" class="inline md:absolute mt-25 md:mt-0 right-0 bottom-0 md:max-w-[445px] lg:max-w-[350px] xl:max-w-[380px] 2xl:max-w-[445px]" alt="collecting-payments-image">
+            </div>
+            <div class="text-center bg-gray rounded-lg px-15 py-25 md:py-50 lg:py-60 xl:py-80 lg:ml-[125px]">
+                <img src="assets/images/mobile.png" class="inline" alt="mobile-image">
+            </div>
+        </div>
+    </div>
+</div>
